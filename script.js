@@ -2,21 +2,16 @@ console.log("Conecta+ iniciado!");
 
 /* ----------------------BOTAO A+ ------------------------------ */
 const tamanho = document.getElementById("tamanho");
-
-
 tamanho.addEventListener("click", aumentarFonte);
 
 function aumentarFonte(){
+document.querySelectorAll("p, h1, h2").forEach(texto => {
+let tamanhoAtual = parseInt(
+window.getComputedStyle(texto).fontSize
+);
 
-    document.querySelectorAll("p, h1, h2").forEach(texto => {
-
-        let tamanhoAtual = parseInt(
-            window.getComputedStyle(texto).fontSize
-        );
-
-        texto.style.fontSize = (tamanhoAtual + 2) + "px";
-    });
-
+texto.style.fontSize = (tamanhoAtual + 2) + "px";
+});
 }
 /* -------------------------BOTAO A- --------------------------- */
 const diminuir = document.getElementById("diminuir");
