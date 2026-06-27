@@ -1,6 +1,8 @@
 console.log("Conecta+ iniciado!");
 
-/* ----------------------BOTAO A+ ------------------------------ */
+/* ----------------------ACESSIBILIDADE ------------------------------ */
+
+/* BOTAO A+ */
 const tamanho = document.getElementById("tamanho");
 tamanho.addEventListener("click", aumentarFonte);
 
@@ -9,38 +11,30 @@ document.querySelectorAll("p, h1, h2").forEach(texto => {
 let tamanhoAtual = parseInt(
 window.getComputedStyle(texto).fontSize
 );
-
 texto.style.fontSize = (tamanhoAtual + 2) + "px";
 });
 }
-/* -------------------------BOTAO A- --------------------------- */
-const diminuir = document.getElementById("diminuir");
 
+/* BOTAO A- */
+const diminuir = document.getElementById("diminuir");
 diminuir.addEventListener("click", diminuirFonte);
 
 function diminuirFonte(){
+document.querySelectorAll("p, h1, h2").forEach(texto => {
+let tamanhoAtual = parseInt(
+window.getComputedStyle(texto).fontSize
+);
 
-    document.querySelectorAll("p, h1, h2").forEach(texto => {
-
-        let tamanhoAtual = parseInt(
-            window.getComputedStyle(texto).fontSize
-        );
-
-        texto.style.fontSize = (tamanhoAtual - 2) + "px";
-    });
-
+texto.style.fontSize = (tamanhoAtual - 2) + "px";
+});
 }
-/* ------------------------BOTAO A ---------------------------- */
-const resetar = document.getElementById("resetar");
 
+/* BOTAO A */
+const resetar = document.getElementById("resetar");
 resetar.addEventListener("click", resetarFonte);
 
 function resetarFonte(){
-
-    document.querySelectorAll("p, h1, h2").forEach(texto => {
-
-        texto.style.fontSize = "";
-
-    });
-
+document.querySelectorAll("p, h1, h2").forEach(texto => {
+texto.style.fontSize = "";
+});
 }
